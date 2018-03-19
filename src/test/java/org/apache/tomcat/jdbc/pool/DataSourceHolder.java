@@ -15,12 +15,16 @@ public class DataSourceHolder {
         p.setTestOnReturn(false);
         p.setValidationInterval(30000);
         p.setTimeBetweenEvictionRunsMillis(30000);
+        // 最大连接数
         p.setMaxActive(100);
+        // 初始连接数
         p.setInitialSize(10);
+        // 最小空闲连接数
+        p.setMinIdle(10);
+        // 获取连接的最大等待时间, 超时则抛SQLException
         p.setMaxWait(10000);
         p.setRemoveAbandonedTimeout(60);
         p.setMinEvictableIdleTimeMillis(30000);
-        p.setMinIdle(10);
         p.setLogAbandoned(true);
         p.setRemoveAbandoned(true);
         p.setJdbcInterceptors(
